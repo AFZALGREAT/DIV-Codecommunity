@@ -1,0 +1,5 @@
+usefullwebsite
+dribble
+#for font style
+fonts.google.com
+select font and paste the link inside head 

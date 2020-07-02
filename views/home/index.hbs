@@ -1,0 +1,165 @@
+ <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          {{#if t}}
+          <h1 class="my-4"><u><b>DSA-{{t}}</b></u></h1>
+          {{else}}
+          <h1 class="my-4"><u><b>DSA</b></u></h1>
+         {{/if}}
+          <!-- Blog Post -->
+          {{#each posts}}
+          <div class="card mb-4">
+            <div id="carouselExample{{id}}" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    
+            {{#each file }}
+            {{#if @key}}
+            <div class="carousel-item "><img class="card-img-top" src="/uploads/{{this}}" alt="Card image cap"></div>
+            
+            {{else}}
+            <div class="carousel-item active"><img class="card-img-top" src="/uploads/{{this}}" alt="Card image cap"></div>
+            
+            {{/if}}
+            {{/each }}
+           
+           {{#if ytlink}}
+           <div class="carousel-item "><iframe class="card-img-top" height="404" src="{{ytlink}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            {{/if}}
+   </div> 
+       
+  <a class="carousel-control-prev" href="#carouselExample{{id}}" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExample{{id}}" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  
+</div>
+ 
+            <div class="card-body">
+              <h2 class="card-title">{{title}}</h2>
+              <p class="card-text">{{substr "200" body}}</p>
+              {{#if t}}
+              <a href="/solutionview/{{id}}" class="btn btn-primary">Read More &rarr;</a>
+              {{else}}
+              <a href="/post/{{id}}" class="btn btn-primary">Read More &rarr;</a>
+              {{/if}}
+            </div>
+            <div class="card-footer text-muted">
+             Posted on  
+           {{generatetime date 'dddd DD MMMM , YYYY' }} at {{generatetime date 'kk:mm'}} by
+              {{user.firstname}} 
+              {{!-- <button type="button" class="btn secondary" data-toggle="modal" data-target="#exampleModalCenter">
+  <u>Rating</u>
+</button> --}}
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color:brown;">Rating Detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+       <span class="heading">User Rating</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.1 average based on 254 reviews.</p>
+<hr style="border:3px solid #f1f1f1">
+<form action="/admin/posts/rate" method="POST" enctype="multipart/form-data"></form>
+<div class="form-group">
+    <label for="status">Rate difficulty level scale(1-5)</label>
+<select name="ratingpoint" id="status" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        
+    </select>
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+          </div>
+          {{/each}}
+         
+        
+
+           <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+              <a class="page-link" href="#">&uarr; Go top</a>
+            </li>
+            
+          </ul>
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Search Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+<br>
+          <!-- Categories Widget -->
+          <div class="card" style="width: 23rem;">
+  <div class="card-header">
+    
+    Learn by categories
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="/">Random</a></li>
+    <li class="list-group-item"><a href="/category/array">Array</a></li>
+    <li class="list-group-item"><a href="/category/linked">Linked List</a></li>
+    <li class="list-group-item"><a href="/category/tree">Tree</a></li>
+    <li class="list-group-item"><a href="/category/graph">graph</a></li>
+    <li class="list-group-item"><a href="/category/dynamic">Dynamic programming</a></li>
+  </ul>
+</div>
+<br>
+
+          <!-- Side Widget -->
+          <div class="card">
+  <div class="card-header">
+    Also visit
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text">Go to IDE  !</p>
+    <a href="https://ide.geeksforgeeks.org/" class="btn btn-secondary">ide </a>
+  </div>
+</div>
+
+
+        </div>
+
+      </div>
+      <!-- /.row -->

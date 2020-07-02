@@ -1,0 +1,51 @@
+{{#if success_message1}}
+<div class="alert alert-success">
+    {{success_message1}}
+</div>
+
+{{/if}}
+
+<h1>ALL POST</h1>
+
+<table class="table table-bordered">
+
+<thead>
+
+</thead>
+<tr>
+
+    
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>categorie</th>
+    <th>Allow comment</th>
+    <th>Time</th>
+    <th>Date</th>
+    <th>Update</th>
+    <th>Delete</th>
+    
+</tr>
+</thead>
+<tbody>
+    {{#each posts}}
+    <tr>
+     <td>{{id}}</td>
+     <td><img height="50" class="img-responsive" src="/uploads/{{file}}"></td>
+    <td>{{title}}</td>
+    <td>{{status}}</td>
+    <td>{{allowcomment}}</td>
+    <td>{{generatetime date 'kk:mm' }}</td>
+    <td>{{generatetime date 'dddd DD MMMM , YYYY' }}</td>
+    <td><a href="/admin/posts/edit/{{id}}" class="btn btn-info">Edit</a></td> 
+    <td>
+        <form action="/admin/posts/delete/{{id}}" method="POST">
+        <button type="submit" class="btn btn-danger">delete</button>
+        </form>
+    </td>  
+    </tr>
+    {{/each}}
+</tbody>
+
+
+</table>

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+   <span class="badge badge-pill badge-secondary" style="margin-bottom: 40px;margin-top:30px"> Questions/queries</span>
+  
+
+<br>
+    </div>
+    </div>
+    </div>
+   
+    {{!-- <section class="section">
+        <div class="container">
+            <div class="columns">
+                   <p>Sort By</p>
+                       <a href="#" >Unanswered</a>
+                        <a href="#" >Answered</a>
+
+                <div class="column is-offset-4 is-4">
+                    <form method="POST" action="/">
+                        <div class="field has-addons">
+
+                            <div class="form-group">
+    <label for="status">Question Tag</label>
+
+    <select name="status" id="status" class="form-control">
+        <option value="array">Array</option>
+        <option value="linked">Linked List</option>
+        <option value="tree">Tree</option>
+        <option value="graph">Graph</option>
+        <option value="dynamic">Dynamic Programing</option>
+    </select>
+</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+    {{#each posts}}
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                
+<div class="card">
+  <div class="card-header">
+   {{generatetime date 'dddd DD MMMM , YYYY' }} at {{generatetime date 'kk:mm'}} by
+              {{user.firstname}} 
+  </div>
+ 
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">{{substr "200" body}}</p>
+    <a href="/discuss/{{id}}" class="btn btn-success">view</a>
+    <a href="/create/solution/{{id}}" class="btn btn-primary">submit solution</a>
+  </div>
+</div>
+<br>
+            
+            </div>
+        </div>
+    </section>
+     {{/each}}  

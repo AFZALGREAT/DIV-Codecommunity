@@ -1,0 +1,131 @@
+
+
+    <!-- Page Content -->
+    
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+         
+          <!-- Title -->
+          <h1 class="mt-4">{{posts.title}}</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            by
+            {{!-- <button class="btn info"><a href="#"><u>{{posts.user.firstname}}</u></a></button> --}}
+            <!-- Button trigger modal -->
+<button type="button" class="btn secondary" data-toggle="modal" data-target="#exampleModalCenter">
+  <u>{{posts.user.firstname}}</u>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color:brown;">Contributer Detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+       <center> <img class="d-flex mr-3 rounded-circle responsive" src="/uploads/{{posts.user.profilepic}}"style="height: 80px; width: 80px" >
+       <br>
+       
+        <b>{{posts.user.firstname}} {{posts.user.lastname}}</b>
+        <br><br>
+          <p style="color: grey;font-size: 18px;">{{posts.user.profession}}</p>
+         {{posts.user.college}}<br></center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+          </p>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted on {{generatetime posts.date 'dddd DD MMMM , YYYY' }} at {{generatetime posts.date 'kk:mm' }}</p>
+
+          <hr>
+
+          <!-- Preview Image -->
+           <div class="card mb-4">
+            <div id="carouselExample{{posts.id}}" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    
+            {{#each posts.file }}
+            {{#if @key}}
+            <div class="carousel-item "><img class="card-img-top" src="/uploads/{{this}}" alt="Card image cap"></div>
+            
+            {{else}}
+            <div class="carousel-item active"><img class="card-img-top" src="/uploads/{{this}}" alt="Card image cap"></div>
+            
+            {{/if}}
+            {{/each }}
+           
+           {{#if posts.ytlink}}
+           <div class="carousel-item "><iframe class="card-img-top" height="404" src="{{posts.ytlink}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            {{/if}}
+   </div> 
+       
+  <a class="carousel-control-prev" href="#carouselExample{{posts.id}}" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExample{{posts.id}}" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  
+</div>
+         
+
+          <hr>
+
+          <!-- Post Content -->
+          <p class="lead">{{posts.body}}</p>
+
+          <hr>
+       
+          <!-- Comments Form -->
+      {{#if posts.allowcomment}}
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <form action="/home/comment/discuss/{{posts.id}}" method="POST">
+                <div class="form-group">
+                  <textarea class="form-control" rows="2" name="body"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+        {{#each posts.comment}}
+        
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle responsive" src="/uploads/{{user.profilepic}}" alt="" style="height: 40px; width: 40px">
+            <div class="media-body">
+              <h5 class="mt-0 font-weight-bold">{{user.firstname}}</h5>
+             <div class="font-weight-normal">{{body}}</div>
+             <div class="font-weight-light" style="font-size: 13px;">{{#if date}}on {{generatetime date ' DD MMMM , YYYY' }}{{/if}}</div>
+             
+             
+             
+              <hr>
+             
+            </div>
+          </div>
+        {{/each}}
+
+      {{/if}}
+         

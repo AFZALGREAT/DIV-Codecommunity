@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DIV-blog</title>
+     <link rel="icon" href="/img/blogfavicon.png" type="image/icon">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/blog-home.css" rel="stylesheet">
+    <link href="/css/blog-post.css" rel="stylesheet">
+    <link href="/css/w3.css" rel="stylesheet">
+   
+
+  </head>
+
+  <body>
+   {{#if t}}
+   {{>discuss/discussnav}}
+   {{else}}
+   {{> home/homenav}}
+   {{/if}}
+    <!-- Page Content -->
+    <div class="container">
+    {{>home/flashmsg}}
+
+    {{{body}}}
+     
+    </div>
+    <!-- /.container -->
+    {{#if t}}
+    {{>discuss/discussfooter}}
+    {{else}}
+    {{>home/footer}}
+    {{/if}}
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,22 @@
+<br>
+<div class="modal-body">
+       <center> <img class="d-flex mr-3 rounded-circle responsive" src="/uploads/{{user.profilepic}}"style="height: 120px; width: 120px" >
+       <br>
+       
+        <p style="font-size:20px;"><b>{{user.firstname}} {{user.lastname}}</b></p>
+        
+          <p style="color: grey;font-size: 22px;">{{#if user.profession}}{{user.profession}}{{else}}NA{{/if}}</p>
+        <p style="font-size:28px">{{#if user.college}}{{user.college}}{{else}}NA{{/if}}</p><br></center>
+      <br><br>
+         </div>
+    <div class="row">
+        <div class="col">
+     <p>No. of Posts - <b>{{count1}}</b></p>
+        </div>
+        <div class="col">
+     <p>No. of comments - </p>
+        </div>
+        <div class="col">
+      <p>Joined on - {{#if user.date}}<b>{{generatetime user.date ' DD MMMM , YYYY' }}{{else}}NA</b>{{/if}}</p>
+        </div>
+    </div>

@@ -1,0 +1,52 @@
+<table class="table table-bordered">
+
+<thead>
+
+</thead>
+<tr>
+
+    
+    
+    <th>Image</th>
+    <th>Title</th>
+    
+    
+</tr>
+</thead>
+<tbody>
+   
+    <tr>
+     
+     <td><img height="50" class="img-responsive" src="/uploads/{{posts.file}}"></td>
+    <td>{{posts.title}}</td>
+     
+    </tr>
+   
+</tbody>
+
+
+</table>
+
+<h4 class="font-weight-light">comments:</h4><br>
+{{#each posts.comment}}
+        <div class="row">
+            <div class="col-8">
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle responsive" src="/uploads/{{user.profilepic}}" alt="" style="height: 40px; width: 40px">
+            <div class="media-body">
+              <h5 class="mt-0 font-weight-bold">{{user.firstname}}</h5>
+             <div class="font-weight-normal">{{body}}</div>
+             <div class="font-weight-light" style="font-size: 13px;">{{#if date}}on {{generatetime date ' DD MMMM , YYYY' }}{{/if}}</div>
+             </div>
+             <div class="col-4">
+             {{!-- <form action="/delete/comment/{{}}" --}}
+             <form action="/delete/comments/{{id}}" method="POST">
+             <button class="btn btn-secondary " type="submit" name="afzal" value="{{postid}}">delete</button></form>
+             </div>
+              
+             
+            </div>
+          </div>
+          </div>
+          <hr>
+{{/each}}

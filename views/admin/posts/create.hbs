@@ -1,0 +1,48 @@
+<h1>Create Post</h1>
+
+<form action="/admin/posts/create" method="POST" enctype="multipart/form-data">
+    
+<div class="form-group">
+
+    <label for="title">Title</label>
+    <input name="title" type="text" class="form-control" id="title" placeholder="enter title">
+
+</div>
+<div class="form-group">
+
+    <label for="file">File upload</label>
+    <input name="file" type="file" class="form-control"  multiple="multiple">
+
+</div>
+<div class="form-group">
+
+    <label for="file">Youtube Link</label>
+    <input name="ytlink" type="text" class="form-control" id="title" placeholder="Link">
+
+</div>
+<div class="form-group">
+    <label for="status">categorie</label>
+
+    <select name="status" id="status" class="form-control">
+        <option value="array">Array</option>
+        <option value="linked">Linked List</option>
+        <option value="tree">Tree</option>
+        <option value="graph">Graph</option>
+        <option value="dynamic">Dynamic Programing</option>
+    </select>
+</div>
+<div class="form-check" >
+    <label for="allowcomments" class="form-check-label">
+        <input name="allowcomment" type="checkbox" class="form-check-input" id="allowcomment">
+        Allow Comment
+    </label>
+</div>
+<div class="form-group">
+
+    <label for="body">Body</label>
+    <textarea name="body" cols="30" rows="8" type="text" class="form-control" id="body" placeholder="enter Description"></textarea>
+
+</div>
+<button type="submit" class="btn btn-primary">submit</button>
+
+</form>

@@ -1,0 +1,99 @@
+{{!-- <div class="row" style="font-family: 'Gelasio', serif;
+        font-size: 48px;">
+<h3  class="col-12 text-dark ">First Name : <p class=" text-muted">{{user.firstname}}</p></h3> 
+<br>
+<hr>
+<h3 class="col-12 text-dark ">Last Name : <p class="text-muted">{{user.lastname}}</p></h3> 
+<br>
+<hr>
+<h3 class="col-12 text-dark">Email : <p class="text-muted">{{user.email}}</p></h3> 
+<br>
+</div> --}}
+{{>home/flashmsg}}
+<div class="dj">
+    <h3><i class="fa fa-user " aria-hidden="true"></i></i> Profile</h3>
+</div>
+<hr>
+      <div class="row imd">
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">First Name : </label>
+              <div class="col-xs-7 controls"> {{user.firstname}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Last Name : </label>
+              <div class="col-xs-7 controls"> {{user.lastname}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">User Name : </label>
+              <div class="col-xs-7 controls"> {{user.firstname}} {{user.lastname}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Email : </label>
+              <div class="col-xs-7 controls"> {{user.email}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">City : </label>
+              <div class="col-xs-7 controls">{{#if user.city}}{{user.city}}{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Country : </label>
+              <div class="col-xs-7 controls">{{#if user.country}}{{user.country}}{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">College/Alma mater : </label>
+              <div class="col-xs-7 controls">{{#if user.college}}{{user.college}}{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Hobby/Interests : </label>
+              <div class="col-xs-7 controls">{{#if user.hobby}}{{user.hobby}}{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Profession/Skill </label>
+              <div class="col-xs-7 controls">{{#if user.profession}}{{user.profession}}{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Phone : </label>
+              <div class="col-xs-7 controls">{{#if user.phone}}{{user.phone}}{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6 imd1">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label imd2">Social Network </label>
+              <div class="col-xs-7 controls">{{#if user.socialnetwork}}<a href="http://{{user.link}}">{{user.socialnetwork}}</a>{{else}}NA{{/if}}</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+        </div>
+    <hr>
+    <div class="imd">
+        <a href="/admin/posts/editprofile/{{user.id}}" class="btn btn-primary">Add info / Edit profile</a>
+    </div>
