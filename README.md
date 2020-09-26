@@ -1,6 +1,6 @@
 # codecommunity
 
-This is a Web development project , this project is a coding community platform where millions of geeks can contribute there learning through articles and slides share ,and can ask querie related to Data structure and Algorithm or related field & help the geeks by solving out there queries
+This is a Web development project , this project is a coding community platform where geeks can contribute there learning through articles and slides share ,and can ask querie related to Data structure and Algorithm or related field & help the geeks by solving out there queries
 
 # Features
 Post article on Data structure or any related field subject.
