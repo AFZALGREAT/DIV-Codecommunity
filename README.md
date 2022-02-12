@@ -1,4 +1,4 @@
-# codecommunity
+# DIV-Codecommunity
 
 This is a Web development project , this project is a coding community platform where geeks can contribute there learning through articles and slides share ,and can ask querie related to Data structure and Algorithm or related field & help the geeks by solving out there queries
 
